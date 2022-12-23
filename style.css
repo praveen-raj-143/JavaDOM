@@ -1,0 +1,11 @@
+#cards{
+    display: flex;
+    
+}
+#card{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 10px;
+    
+}

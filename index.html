@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>DOM</h1>
+    <ol>
+        <li>
+            <h2>Write the code to access element which is having id as "text"</h2>
+            <h3>CODE :</h3>
+            <div id="text">pikachu</div>
+            <h4>HTML code</h4>
+            <pre>
+                < div id="text">pikachu < / div>
+
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let c = document.getElementById("text");
+                console.log(c.innerText);
+            </pre>
+            
+        </li>
+        <li>
+            <h2>Write the code to access element which is having tag as "h1"</h2>
+            <h3>CODE :</h3>
+            <h1 >Charmendor, balbosur, meoth</h1>
+            <h4>HTML code</h4>
+            <pre>
+                < h1 >Charmendor, balbosur, meoth< / h1>
+
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let P = document.getElementsByTagName("h1")
+                console.log(P.innerText);
+            </pre>
+        </li>
+        <li>
+            <h2>Write the code to access element which is having class as "box"</h2>
+            <h3>CODE :</h3>
+            <div class="box">Naruto</div>
+            <h4>HTML code</h4>
+            <pre>
+                < div class="box">Naruto< /div>
+
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let d = document.getElementsByClassName("box")
+                console.log(d[0].innerText);
+            </pre>
+        </li>
+        <li>
+            <h2>
+                <pre>
+ "< h 1 >Hello </ h1>
+
+Change the heading from ""Hello"" to ""Hello World"" using DOM functions"
+                </pre>
+            </h2>
+            <h2 id="chan">Hello</h2>
+            <h4>HTML code</h4>
+            <pre>
+                < h2 id="change">Hello< /h2>
+
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let f = document.getElementById("change")
+                f.innerText="Hello World";
+            </pre>
+        </li>
+        <li>
+            <h2>Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h2>
+            <div id="cards">
+                <div id="card"></div>
+                <div id="card"></div>
+                <div id="card"></div>
+            </div>
+        
+            <button id="btn">column</button>
+            <button id="btn1">Row</button>
+            <h4>HTML code</h4>
+            <pre>
+                < div id="cards">
+                    < div id="card">< /div>
+                    < div id="card">< /div>
+                    < div id="card">< /div>
+                < /div>
+            
+                < button id="btn">column< /button>
+                < button id="btn1">Row< /button>
+
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let cards = document.getElementById("cards");
+                let btnElement= document.getElementById("btn");
+                let btn1Element= document.getElementById("btn1");
+                btnElement.addEventListener("click",function(){
+                    cards.style.flexDirection="column";
+                })
+                btn1Element.addEventListener("click",function(){
+                    cards.style.flexDirection="row";
+                })                
+            </pre>
+        </li>
+        <li>
+            <h2>What's the difference between window vs document?</h2>
+            <h3>WINDOW :</h3>
+           <ul>
+            <li>Window is the execution context and global object for that context's JavaScript. It is the top most object and outermost element of the object hierarchy.
+            </li>
+            <li>It is the very first object that is loaded in the browser.
+            </li>
+           </ul>
+            <h3>DOCUMENT :</h3>
+            <ul>
+                <li>Document contains the DOM, initialized by parsing HTML.Each HTML document that gets loaded into a window becomes a document object. The document contains the contents of the page.
+                </li>
+                <li>It is loaded inside the window.	</li>
+            </ul>
+        </li>
+        <li>
+            <h2>
+                <pre>
+"< h1>Hello < /h1>
+
+Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"
+                </pre>
+            </h2>
+            <h1 id="heading">Hello</h1>
+            <h4>HTML code</h4>
+            <pre>
+                < h1 id="heading">Hello< /h1>
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let g = document.getElementById("heading");
+                g.style.color="red";                
+            </pre>
+        </li>
+        <li>
+            <h2>Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h2>
+            <p id="hi">Hello World</p>
+            <button id="change">Replace Text</button>
+            <h4>HTML code</h4>
+            <pre>
+                < p id="hi">Hello World< /p>
+                < button id="change">Replace Text< /button>
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let h = document.getElementById("hi");
+                let button = document.getElementById("change");
+                
+                button.addEventListener("click",function(){
+                    h.innerText = "Welcome to Elevation academy";
+                })                
+            </pre>
+        </li>
+        <li>
+            <h2>Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h2>
+            <div id="clock"></div>
+            <h4>HTML code</h4>
+            <pre>
+                < div id="clock">< /div>
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                function timer(){
+                    let time = new Date();
+                    let hrs = time.getHours();
+                    let min = time.getMinutes();
+                    let sec = time.getSeconds();
+                    // console.log(hrs, min, sec);
+                    document.getElementById("clock").innerHTML  = `${hrs} : ${min} : ${sec}`
+                    
+                }
+                
+                setInterval(timer, 1000);                ;
+            </pre>
+        </li>
+        <li>
+            <h2>Create a select drop down for selecting Year 20-21, 21-22 etc. Print the item text selected</h2>
+            <select name="" id="dot">
+                <option value="">select year</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2019-2020">2019-2020</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2022-2023">2022-2023</option>
+                <option value="2023-2024">2023-2024</option>
+            </select>
+            <div id="ou"></div>
+            <h4>HTML code</h4>
+            <pre>
+                < select name="" id="dot">
+                    < option value="">select year< /option>
+                    < option value="2018-2019">2018-2019< /option>
+                    < option value="2019-2020">2019-2020< /option>
+                    < option value="2021-2022">2021-2022< /option>
+                    < option value="2022-2023">2022-2023< /option>
+                    < option value="2023-2024">2023-2024< /option>
+                < /select>
+                < div id="ou">< /div>
+            </pre>
+            <h4>JS code</h4>
+            <pre>
+                let selectElement=document.getElementById("dot");
+                let output=document.getElementById("ou")
+                selectElement.addEventListener("change",function(event){
+                    // console.log(event.target.value);
+                    // console.log(event.target.selectedOptions[0].innerText);
+                    output.innerText=event.target.selectedOptions[0].innerText;
+                })                
+            </pre>
+        </li>
+        
+    </ol>
+    <script src="index.js"></script>
+</body>
+</html>
